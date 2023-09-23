@@ -1,0 +1,40 @@
+plugins {
+    id 'java'
+    id 'war'
+}
+
+group = 'ua.com.yehorchevardin.andersen.javaee.project.sample'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+ext {
+    springVersion = "6.0.12"
+}
+
+dependencies {
+    compileOnly 'org.projectlombok:lombok:1.18.26'
+    annotationProcessor 'org.projectlombok:lombok:1.18.26'
+    implementation "com.mysql:mysql-connector-j:8.0.32"
+    implementation "com.zaxxer:HikariCP:5.0.1"
+    implementation 'org.hibernate.validator:hibernate-validator:8.0.0.Final'
+    implementation "org.springframework:spring-core:${springVersion}"
+    implementation "org.springframework:spring-context:${springVersion}"
+    implementation "org.springframework:spring-webmvc:${springVersion}"
+    compileOnly "jakarta.servlet:jakarta.servlet-api:6.0.0"
+}
+
+war {
+    webAppDirName = 'src/main/webapp'
+    archivesBaseName 'javaee-project-sample'
+    manifest {
+        attributes 'Implementation-Title': 'JavaEEProjectSample',
+                'Implementation-Version': '1.0.0'
+    }
+}
+
+test {
+    useJUnitPlatform()
+}
