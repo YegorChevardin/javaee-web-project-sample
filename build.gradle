@@ -19,7 +19,6 @@ dependencies {
     annotationProcessor 'org.projectlombok:lombok:1.18.26'
     implementation "com.mysql:mysql-connector-j:8.0.32"
     implementation "com.zaxxer:HikariCP:5.0.1"
-    implementation 'org.hibernate.validator:hibernate-validator:8.0.0.Final'
     implementation "org.springframework:spring-core:${springVersion}"
     implementation "org.springframework:spring-context:${springVersion}"
     implementation "org.springframework:spring-webmvc:${springVersion}"
