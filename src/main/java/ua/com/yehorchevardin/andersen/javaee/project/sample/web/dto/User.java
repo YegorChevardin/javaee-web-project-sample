@@ -2,6 +2,7 @@ package ua.com.yehorchevardin.andersen.javaee.project.sample.web.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 /**
@@ -11,6 +12,7 @@ import lombok.Setter;
  * @version 0.0.1
  */
 @AllArgsConstructor
+@NoArgsConstructor
 @Getter
 @Setter
 public class User {

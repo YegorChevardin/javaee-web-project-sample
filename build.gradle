@@ -28,6 +28,7 @@ dependencies {
 }
 
 war {
+    duplicatesStrategy = 'exclude'
     webAppDirName = 'src/main/webapp'
     archivesBaseName 'javaee-project-sample'
     manifest {

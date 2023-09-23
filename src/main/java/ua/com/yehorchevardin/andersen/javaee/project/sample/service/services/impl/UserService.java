@@ -52,6 +52,8 @@ public class UserService implements CreateReadUpdateDeleteService<User> {
   public void deleteById(Long id) {
     try {
       findById(id);
+      userDAO.deleteById(id);
+      //todo fix delete and create
     } catch (SQLException e) {
       throw new WebOperationException(ExceptionMessages.WEB_OPERATION_EXCEPTION.getMessage(), e);
     }
