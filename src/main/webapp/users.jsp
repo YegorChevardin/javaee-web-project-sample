@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!doctype html>
 <html lang="en">
 <head>
@@ -11,7 +12,7 @@
 <body>
 <h1>Users list</h1>
 <hr/>
-<table>
+<table border="3">
     <thead>
     <tr>
         <th>ID</th>
