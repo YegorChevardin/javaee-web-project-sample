@@ -86,6 +86,7 @@ public class UserCRUDDAOImpl implements CreateReadUpdateDeleteDAO<UserEntity> {
     try (Connection connection = dataSource.getConnection();
         PreparedStatement preparedStatement = connection.prepareStatement(DELETE_BY_ID)) {
       preparedStatement.setLong(1, id);
+      preparedStatement.executeUpdate();
     }
   }
 

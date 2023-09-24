@@ -62,6 +62,6 @@ public class UserController {
   @PostMapping("/create")
   public String createUser(@ModelAttribute(name = "user") User user) {
     createReadUpdateDeleteService.create(user);
-    return "redirect:/users/" + user.getId();
+    return "redirect:/users";
   }
 }
