@@ -81,15 +81,6 @@ public class UserCRUDDAOImpl implements CreateReadUpdateDeleteDAO<UserEntity> {
     return optionalUser;
   }
 
-  //  @Override
-  //  public void deleteById(Long id) throws SQLException {
-  //    try (Connection connection = dataSource.getConnection();
-  //        PreparedStatement preparedStatement = connection.prepareStatement(DELETE_BY_ID)) {
-  //      preparedStatement.setLong(1, id);
-  //      preparedStatement.executeUpdate();
-  //    }
-  //  }
-
   @Override
   public void deleteById(Long id) throws SQLException {
     Connection connection = null;
