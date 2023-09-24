@@ -19,14 +19,16 @@ dependencies {
     annotationProcessor 'org.projectlombok:lombok:1.18.26'
     implementation "com.mysql:mysql-connector-j:8.0.32"
     implementation "com.zaxxer:HikariCP:5.0.1"
-    implementation 'org.hibernate.validator:hibernate-validator:8.0.0.Final'
     implementation "org.springframework:spring-core:${springVersion}"
     implementation "org.springframework:spring-context:${springVersion}"
     implementation "org.springframework:spring-webmvc:${springVersion}"
+    implementation 'org.glassfish.web:jakarta.servlet.jsp.jstl:3.0.1'
+    implementation 'jakarta.servlet.jsp.jstl:jakarta.servlet.jsp.jstl-api:3.0.0'
     compileOnly "jakarta.servlet:jakarta.servlet-api:6.0.0"
 }
 
 war {
+    duplicatesStrategy = 'exclude'
     webAppDirName = 'src/main/webapp'
     archivesBaseName 'javaee-project-sample'
     manifest {

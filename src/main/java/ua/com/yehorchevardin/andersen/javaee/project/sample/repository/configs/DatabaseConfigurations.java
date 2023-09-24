@@ -18,6 +18,8 @@ import javax.sql.DataSource;
 @PropertySource(value = "classpath:application.properties")
 @Configuration
 public class DatabaseConfigurations {
+  private static final String TRANSACTION_ISOLATION_LEVEL = "TRANSACTION_READ_COMMITTED";
+
   @Bean
   public DataSource dataSource(HikariConfig config) {
     return new HikariDataSource(config);
@@ -31,11 +33,15 @@ public class DatabaseConfigurations {
       @Value("${db.driver}") String driverName,
       @Value("${db.connectionNumber}") int connectionNumber) {
     HikariConfig config = new HikariConfig();
+
     config.setUsername(username);
     config.setPassword(password);
     config.setJdbcUrl(url);
     config.setDriverClassName(driverName);
     config.setMaximumPoolSize(connectionNumber);
+
+    config.setTransactionIsolation(TRANSACTION_ISOLATION_LEVEL);
+
     return config;
   }
 }
